@@ -19,6 +19,7 @@ async function fillTable() {
     var currentLine = x.split(":");
     hashm[currentLine[0]] = currentLine[1];
   }
+  console.log(hashm);
 }
 
 function createChain() {
