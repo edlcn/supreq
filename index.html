@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      input[type="text"] {
+        display: block;
+        margin: 0 auto;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .header {
+        width: 100%;
+        height: 50px;
+        padding-left: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: cornflowerblue;
+      }
+
+      .headerbuttons {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .headerbuttons button {
+        margin-left: 30px;
+        margin-right: 30px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 1.25rem;
+        color: rgba(0, 66, 136, 1);
+        font-family: "Roboto";
+      }
+
+      h1 {
+        font-size: 30px;
+        font-family: "Roboto";
+        color: rgba(0, 66, 136, 1);
+      }
+      body {
+        background-color: rgba(91, 99, 88, 0.76);
+      }
+
+      #mynetwork {
+        width: 100%;
+        height: 700px;
+        border: 1px solid lightgray;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Prerequisite Chain of Sabanci University Courses</h1>
+      <div class="headerbuttons">
+        <button data-bs-toggle="modal" data-bs-target="#modal1">Guide</button>
+
+        <button data-bs-toggle="modal" data-bs-target="#modal2">About</button>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modal1"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color: cornflowerblue">
+            <h5 class="modal-title" id="modal-title">Quick Guide</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="modal-body"
+            style="background-color: rgba(91, 99, 88, 0.76)"
+          >
+            <p>
+              - You can search for course(s), just seperate them with a comma.
+              (ex. query: CS432,EE411)
+            </p>
+            <p>
+              - You can search for course domain(s). (ex. query: ENS, EE, CS)
+            </p>
+            <p>- You can combine both.</p>
+            <p>
+              - The data might be corrupted for some reason, double check what
+              you see here by double clicking the course node.
+            </p>
+            <p>- You can zoom-in or zoom-out to have a better sight.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modal2"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color: cornflowerblue">
+            <h5 class="modal-title" id="modal-title">About</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="modal-body"
+            style="background-color: rgba(91, 99, 88, 0.76)"
+          >
+            <p>
+              This project aims to visualize the prerequisite chain of SU
+              courses. If you detect an error, or if you have a suggestion you
+              can contact me through: edelican@sabanciuniv.edu
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ex. CS"
+      id="course"
+      style="width: 80%; margin-top: 15px"
+    />
+
+    <button
+      id="submit"
+      class="btn btn-primary"
+      style="display: block; margin-top: 10px; margin-bottom: 10px"
+    >
+      Show me
+    </button>
+
+    <div id="mynetwork"></div>
+
+    <script src="chain.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
