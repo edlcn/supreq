@@ -11,11 +11,9 @@ var options;
 var network;
 
 async function fillTable() {
-  var file = await fetch("https://edlcn.github.io/supreq/out.txt").then(
-    (response) => response.text()
-  );
+  var file = await fetch("out.txt").then((response) => response.text());
 
-  var lines = file.trim().split("\r\n");
+  var lines = file.trim().split("\n");
 
   for (let x of lines) {
     var currentLine = x.split(":");
