@@ -19,7 +19,6 @@ async function fillTable() {
     var currentLine = x.split(":");
     hashm[currentLine[0]] = currentLine[1];
   }
-  console.log(hashm);
 }
 
 function createChain() {
@@ -37,7 +36,7 @@ function createChain() {
       preqChain.push(x);
     } else {
       for (let y of Object.keys(hashm)) {
-        if (stringPart(y) == x.substring(0, stringPart(y).length)) {
+        if (stringPart(y) == x) {
           var toBeAdded = { id: y, label: y };
           nodeList.push(toBeAdded);
           preqChain.push(y);
